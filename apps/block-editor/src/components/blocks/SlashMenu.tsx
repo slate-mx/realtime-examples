@@ -209,7 +209,7 @@ export const SlashMenu = ({ isOpen, onClose }: SlashMenuProps) => {
 
         setPos({
           x: rect.x + window.scrollX,
-          y: rect.y + window.scrollY - 32,
+          y: rect.y + window.scrollY + 24,
           slash: domRange.startOffset,
         })
       }, 0)

@@ -45,7 +45,7 @@ export const Toolbar = () => {
     const scrollTop = scrollWrapper?.scrollTop ?? 0
 
     el.style.opacity = '1'
-    el.style.top = `${rect.top + scrollTop - 100}px`
+    el.style.top = `${rect.top + scrollTop - 40}px`
     el.style.left = `${rect.left}px`
   })
 

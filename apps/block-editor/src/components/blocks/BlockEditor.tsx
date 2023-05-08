@@ -361,7 +361,7 @@ export const BlockEditor = () => {
 
   return (
     <div className='prose' id={PROSE_CONTAINER_ID} onClick={(e) => e.stopPropagation()}>
-      <div className='w-full max-w-3xl mx-auto px-16 py-5 sm:py-10'>
+      <div className='w-full max-w-3xl mx-auto px-16 py-8'>
         <SlateJS editor={editor} value={[]} onChange={onChange}>
           <Toolbar />
 
