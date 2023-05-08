@@ -1,3 +1,13 @@
+/*
+ * Portions of this code were adapted from Liveblocks, which is licensed
+ * under the Apache License Version 2.0. The original code can be found at https://github.com/liveblocks/liveblocks/tree/main/examples/nextjs-block-text-editor-advanced.
+ * Copyright 2023 Liveblocks
+ *
+ * Modifications:
+ * - Bug fixes
+ * - Added insertFragment for copy paste
+ *
+ */
 import { nanoid } from 'nanoid'
 import { Editor, Element, Point, Range, Transforms } from 'slate'
 
@@ -40,10 +50,6 @@ export const withShortcuts = (editor: Editor) => {
           type,
         }
 
-        // This was not working properly for some reason so switched to method below
-        // Transforms.setNodes<CustomElement>(editor, newProperties, {
-        //   match: (n) => Editor.isBlock(editor, n as CustomElement),
-        // })
         Transforms.setNodes(editor, newProperties, { at: path })
 
         return
@@ -85,9 +91,8 @@ export const withShortcuts = (editor: Editor) => {
     }
   }
 
-  // Giving fragments new Id's
   editor.insertFragment = (fragment) => {
-    const newFrags = fragment.map((frag) => ({ ...frag, id: nanoid(16) })) // TODO: Use id generator
+    const newFrags = fragment.map((frag) => ({ ...frag, id: nanoid(16) }))
 
     insertFragment(newFrags)
   }

@@ -1,3 +1,18 @@
+/*
+ * Portions of this code were adapted from Liveblocks, which is licensed
+ * under the Apache License Version 2.0. The original code can be found at https://github.com/liveblocks/liveblocks/tree/main/examples/nextjs-block-text-editor-advanced.
+ * Copyright 2023 Liveblocks
+ *
+ * Modifications:
+ * - Connected to @inrealtime/react
+ * - Added slash menu component
+ * - Styling of components and wrappers
+ * - Added withHistory wrapper
+ * - Numerous bug fixes
+ * - Added newline on click method
+ * - Modified onkeydown listener for extra features
+ *
+ */
 import { KeyboardEvent, useCallback, useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import {
@@ -61,7 +76,6 @@ export const CreateNewBlockFromBlock: Record<string, () => CustomElement> = {
 }
 
 // https://dev.to/devterminal/slatejs-dnd-kit-improving-rich-text-editor-ux-by-adding-drag-and-drop-23d3
-// https://github.com/liveblocks/liveblocks/blob/main/examples/nextjs-block-text-editor-advanced/src/Editor.tsx
 export const BlockEditor = () => {
   const blocks = useStore((root) => root.blocks)
 

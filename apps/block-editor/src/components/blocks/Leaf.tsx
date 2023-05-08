@@ -1,3 +1,12 @@
+/*
+ * Portions of this code were adapted from Liveblocks, which is licensed
+ * under the Apache License Version 2.0. The original code can be found at https://github.com/liveblocks/liveblocks/tree/main/examples/nextjs-block-text-editor-advanced.
+ * Copyright 2023 Liveblocks
+ *
+ * Modifications:
+ * - Styling of components
+ *
+ */
 import { RenderLeafProps } from 'slate-react'
 
 export const Leaf = ({ leaf, children, attributes }: RenderLeafProps) => {

@@ -8,6 +8,7 @@ import { EditorBar } from './components/editor/EditorBar'
 
 dayjs.extend(utc)
 
+// TODO: Loader for later
 // if (documentStatus !== RealtimeDocumentStatus.Ready) {
 //   return (
 //     <div className='w-full max-w-3xl mx-auto px-16 py-20 flex flex-col gap-5'>
