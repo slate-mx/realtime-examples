@@ -1,0 +1,519 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+} */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    @apply text-neutral-900 dark:text-neutral-50 font-normal text-base bg-neutral-50 dark:bg-neutral-950;
+  }
+
+  input {
+    @apply text-neutral-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply bg-primary text-neutral-50 dark:text-neutral-50 h-9 rounded px-3 text-sm font-semibold flex items-center justify-center hover:brightness-110 active:scale-95 transition-all [&>svg:last-child]:-mr-1 [&>svg:last-child]:ml-1 [&>svg:first-child]:-ml-1 [&>svg:first-child]:mr-1 disabled:opacity-60 disabled:pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply bg-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary;
+  }
+
+  .btn-sm {
+    @apply h-7 px-2;
+  }
+
+  .btn-lg {
+    @apply h-11 px-4 rounded-md;
+  }
+
+  .btn-outline {
+    @apply border text-neutral-700 border-neutral-400 bg-neutral-100 hover:border-neutral-500 dark:text-neutral-50 dark:border-neutral-600 dark:bg-neutral-800 dark:hover:brightness-125 dark:hover:border-neutral-500;
+  }
+
+  .btn-danger {
+    @apply bg-error-500;
+  }
+
+  .btn-outline.btn-danger {
+    @apply bg-neutral-100 text-error-500 border-error-500 hover:border-error-500 dark:bg-neutral-800 dark:text-error-500 dark:border-error-500 dark:hover:border-error-500;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-neutral-600 dark:text-neutral-400 hover:brightness-100 hover:bg-neutral-200 dark:hover:bg-neutral-700 hover:text-neutral-900 dark:hover:text-neutral-50;
+  }
+
+  .btn-ghost-sm {
+    @apply h-7 px-2;
+  }
+
+  .btn-ghost-lg {
+    @apply h-11 px-4 rounded-md;
+  }
+
+  .nav-link {
+    @apply h-9 px-3 text-sm flex items-center font-semibold text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors cursor-pointer;
+  }
+
+  .nav-link.active {
+    @apply text-neutral-900 dark:text-neutral-50;
+  }
+
+  .icon-btn {
+    @apply text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-50 h-9 w-9 rounded flex items-center justify-center bg-neutral-400 bg-opacity-0 hover:bg-opacity-20 active:scale-95 transition-all disabled:opacity-60 disabled:pointer-events-none;
+  }
+
+  .icon-btn-outline {
+    @apply border text-neutral-700 border-neutral-400 bg-neutral-100 hover:border-neutral-500 dark:text-neutral-50 dark:border-neutral-600 dark:bg-neutral-800 dark:hover:brightness-125 dark:hover:border-neutral-500;
+  }
+
+  .icon-btn-xs {
+    @apply h-5 w-5;
+  }
+
+  .icon-btn-sm {
+    @apply h-7 w-7;
+  }
+
+  .icon-btn-lg {
+    @apply h-11 w-11 rounded-md;
+  }
+
+  .icon-btn-danger {
+    @apply text-error-500 hover:text-error-500 dark:text-error-500 dark:hover:text-error-500;
+  }
+
+  .icon-btn-outline.icon-btn-danger {
+    @apply bg-neutral-100 text-error-500 border-error-500 hover:border-error-500 dark:bg-neutral-800 dark:text-error-500 dark:border-error-500 dark:hover:border-error-500;
+  }
+
+  .sticker {
+    @apply h-6 rounded px-2 inline-flex items-center text-neutral-50 border bg-primary border-transparent font-bold text-xs [&>svg]:-ml-1 [&>svg]:mr-1 [&>svg]:stroke-neutral-50 overflow-hidden text-ellipsis whitespace-nowrap;
+  }
+
+  .sticker-outline {
+    @apply bg-neutral-700 border-neutral-600 [&>svg]:stroke-primary;
+  }
+
+  .sticker-primary {
+    @apply bg-primary;
+  }
+
+  .sticker-outline.sticker-primary {
+    @apply bg-neutral-700 [&>svg]:stroke-primary;
+  }
+
+  .sticker-secondary {
+    @apply bg-secondary;
+  }
+
+  .sticker-outline.sticker-secondary {
+    @apply bg-neutral-700 [&>svg]:stroke-secondary;
+  }
+
+  .sticker-red {
+    @apply bg-red-500;
+  }
+
+  .sticker-outline.sticker-red {
+    @apply bg-neutral-700 [&>svg]:stroke-red-500;
+  }
+
+  .sticker-yellow {
+    @apply bg-yellow-500;
+  }
+
+  .sticker-outline.sticker-yellow {
+    @apply bg-neutral-700 [&>svg]:stroke-yellow-500;
+  }
+
+  .sticker-green {
+    @apply bg-green-500;
+  }
+
+  .sticker-outline.sticker-green {
+    @apply bg-neutral-700 [&>svg]:stroke-green-500;
+  }
+
+  .sticker-blue {
+    @apply bg-blue-500;
+  }
+
+  .sticker-outline.sticker-blue {
+    @apply bg-neutral-700 [&>svg]:stroke-blue-500;
+  }
+
+  .sticker-purple {
+    @apply bg-purple-500;
+  }
+
+  .sticker-outline.sticker-purple {
+    @apply bg-neutral-700 [&>svg]:stroke-purple-500;
+  }
+
+  .sticker-pink {
+    @apply bg-pink-500;
+  }
+
+  .sticker-outline.sticker-pink {
+    @apply bg-neutral-700 [&>svg]:stroke-pink-500;
+  }
+
+  .sticker-neutral {
+    @apply bg-neutral-500;
+  }
+
+  .sticker-outline.sticker-neutral {
+    @apply bg-neutral-700 [&>svg]:stroke-neutral-500;
+  }
+
+  .input-wrapper {
+    @apply flex flex-col gap-1.5 items-start;
+  }
+
+  .input {
+    @apply h-9 py-0 px-3 text-sm font-medium text-neutral-900 dark:text-neutral-50 rounded border bg-neutral-100 border-neutral-300 dark:bg-neutral-900 dark:border-neutral-700 placeholder:text-neutral-400 dark:placeholder:text-neutral-500 outline-none focus:outline-none focus:ring-2 ring-offset-2 ring-offset-neutral-50 dark:ring-offset-neutral-900 ring-neutral-300 dark:ring-neutral-700 disabled:opacity-60;
+  }
+
+  .input-area {
+    @apply !h-auto min-h-[40px] py-2 resize-none;
+  }
+
+  .input-sm {
+    @apply h-7 px-2;
+  }
+
+  .input-lg {
+    @apply h-11 px-4 text-base rounded-md;
+  }
+
+  .input-ghost {
+    @apply !bg-transparent !border-transparent hover:!bg-neutral-100 hover:dark:!bg-neutral-800 focus:!bg-neutral-100 focus:dark:!bg-neutral-800 transition-colors;
+  }
+
+  .label {
+    @apply text-sm font-medium text-neutral-900 dark:text-neutral-50;
+  }
+
+  .label-error {
+    @apply text-error-500 dark:text-error-500 font-normal;
+  }
+
+  .input-group {
+    @apply flex flex-nowrap items-stretch [&>input]:rounded-none first:[&>*]:rounded-l last:[&>*]:rounded-r [&>span]:bg-neutral-300 [&>span]:dark:bg-neutral-600 [&>span]:inline-flex [&>span]:items-center [&>span]:px-4 [&>span]:text-sm;
+  }
+
+  .kbd {
+    @apply font-mono text-sm h-7 px-2 bg-neutral-100 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 rounded flex items-center justify-center;
+  }
+
+  .kbd-sm {
+    @apply h-5 px-1.5 text-xs;
+  }
+
+  .tooltip {
+    @apply relative before:content-[attr(data-text)] before:absolute before:whitespace-nowrap before:px-2 before:py-1 before:rounded before:shadow-md before:bg-neutral-100 dark:before:bg-neutral-800 before:opacity-0 hover:before:opacity-100 focus-within:before:opacity-100 before:transition-opacity before:z-50 before:pointer-events-none;
+  }
+
+  .tooltip-top {
+    @apply before:top-auto before:right-auto before:bottom-full before:left-1/2 before:-translate-x-1/2 before:mb-1.5;
+  }
+
+  .tooltip-right {
+    @apply before:top-1/2 before:right-auto before:bottom-auto before:left-full before:-translate-y-1/2 before:ml-1.5;
+  }
+
+  .tooltip-bottom {
+    @apply before:top-full before:right-auto before:bottom-auto before:left-1/2 before:-translate-x-1/2 before:mt-1.5;
+  }
+
+  .tooltip-left {
+    @apply before:top-1/2 before:right-full before:bottom-auto before:left-auto before:-translate-y-1/2 before:mr-1.5;
+  }
+
+  .tab {
+    @apply py-1.5 px-3 text-base font-medium border-b border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors;
+  }
+
+  .tab-active {
+    @apply border-b-2 border-neutral-700 dark:border-neutral-200 text-neutral-900 dark:text-neutral-50;
+  }
+
+  .select-wrapper {
+    @apply inline-block min-w-max max-w-min relative [&>svg]:absolute [&>svg]:pointer-events-none [&>svg]:shrink-0 [&>svg]:top-1/2 [&>svg]:-translate-y-1/2 [&>svg]:right-2 [&>svg]:text-neutral-400 dark:[&>svg]:text-neutral-400;
+  }
+
+  .select {
+    @apply h-9 py-0 pl-3 pr-8 text-sm font-medium text-neutral-900 dark:text-neutral-50 rounded border bg-neutral-100 border-neutral-300 dark:bg-neutral-900 dark:border-neutral-700 hover:border-neutral-500 dark:hover:border-neutral-500  appearance-none cursor-pointer transition-colors;
+  }
+
+  .select-sm {
+    @apply h-7 pl-2 pr-7;
+  }
+
+  .select-lg {
+    @apply h-11 text-base rounded-md pl-4 pr-9;
+  }
+
+  .skeleton {
+    @apply bg-neutral-300 dark:bg-neutral-500 opacity-10 animate-pulse;
+  }
+
+  .blog-h1 {
+    @apply text-2xl md:text-3xl font-semibold text-neutral-900 dark:text-neutral-50;
+  }
+
+  .blog-h2 {
+    @apply text-xl md:text-2xl font-semibold mt-8 text-neutral-900 dark:text-neutral-50;
+  }
+
+  .blog-h3 {
+    @apply text-lg md:text-xl font-semibold mt-5 text-neutral-900 dark:text-neutral-50;
+  }
+
+  .blog-h4 {
+    @apply text-base md:text-lg font-semibold mt-5 text-neutral-600 dark:text-neutral-300;
+  }
+
+  .blog-p {
+    @apply text-base md:text-lg leading-5 md:leading-6 text-justify mt-3 text-neutral-500 dark:text-neutral-400;
+  }
+
+  .toggle {
+    @apply w-11 h-6 flex items-center flex-shrink-0 p-0.5 bg-neutral-500 rounded-full duration-300 ease-in-out peer-checked:bg-primary after:w-5 after:h-5 after:bg-neutral-50 after:rounded-full after:duration-300 peer-checked:after:translate-x-5 group-hover:after:scale-105 peer-disabled:opacity-50;
+  }
+
+  .section {
+    @apply mx-auto px-5 py-16 sm:py-24 lg:py-32 w-full max-w-lg sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl;
+  }
+
+  .divider {
+    @apply w-full h-[1px] bg-neutral-100 dark:bg-neutral-800 my-3 sm:my-5;
+  }
+
+  /* OTHER */
+
+  .treeRoot {
+    @apply h-full py-1;
+  }
+
+  .draggingSource {
+    @apply opacity-50;
+  }
+
+  .dropTarget {
+    @apply bg-neutral-400/10 rounded;
+  }
+
+  .placeholderContainer {
+    @apply relative;
+  }
+}
+
+/* react-flow */
+
+.react-flow__background path {
+  stroke: theme('colors.neutral.800');
+}
+
+.react-flow__minimap {
+  border-radius: 4px;
+  background-color: theme('colors.neutral.700') !important;
+  left: 3.2rem !important;
+  bottom: 3.5rem !important;
+  margin: 0 !important;
+  transform-origin: bottom left;
+  transform: scale(0.715);
+}
+
+.react-flow__minimap-node {
+  fill: theme('colors.neutral.500');
+  rx: 1rem !important;
+  ry: 1rem !important;
+}
+
+.react-flow__minimap-mask {
+  fill: theme('colors.neutral.900');
+  opacity: 0.6;
+}
+
+.react-flow__controls {
+  margin: 0 !important;
+  bottom: 3.5rem !important;
+  left: 1rem !important;
+}
+
+.react-flow__controls-button {
+  background: theme('colors.neutral.700') !important;
+  border-bottom: none !important;
+  transition: background-color 0.15s !important;
+}
+
+.react-flow__controls-button:not(:last-child) {
+  border-bottom: 1px solid theme('colors.neutral.600') !important;
+}
+
+.react-flow__controls-button:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.react-flow__controls-button:last-child {
+  border-radius: 0 0 4px 4px !important;
+}
+
+.react-flow__controls-button:hover {
+  background: theme('colors.neutral.600') !important;
+}
+
+.react-flow__controls-button svg {
+  fill: theme('colors.neutral.50') !important;
+}
+
+.react-flow__selection,
+.react-flow__nodesselection-rect {
+  /* prettier-ignore */
+  background: theme('colors.purple.600')1A !important;
+  /* prettier-ignore */
+  border: 1px dotted theme('colors.purple.400')CC !important;
+}
+
+.react-flow__attribution {
+  /* prettier-ignore */
+  background-color: theme('colors.neutral.800') !important;
+  padding: 0 !important;
+}
+
+.react-flow__attribution > a {
+  color: theme('colors.neutral.300') !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.react-flow__node.selected [data-node] {
+  border-color: theme('colors.neutral.400') !important;
+  cursor: grab !important;
+}
+
+.react-flow__handle {
+  border: 1px solid theme('colors.neutral.300') !important;
+  height: 10px !important;
+  width: 10px !important;
+  border-radius: 2px !important;
+  background-color: theme('colors.neutral.400') !important;
+}
+
+.react-flow__handle-top {
+  /* top: 0 !important; */
+  /* transform: translateX(-50%) translateY(-50%) !important; */
+}
+
+.react-flow__handle-bottom {
+  /* bottom: 0 !important; */
+  /* transform: translateX(-50%) translateY(50%) !important; */
+}
+
+.react-flow__handle-left {
+  /* left: 0 !important; */
+  /* transform: translateX(-50%) translateY(-50%) !important; */
+}
+
+.react-flow__handle-right {
+  /* right: 0 !important; */
+  /* transform: translateX(50%) translateY(-50%) !important; */
+}
+
+.react-flow__edge-path,
+.react-flow__connection-path {
+  stroke: theme('colors.neutral.400') !important;
+  stroke-width: 1.5px !important;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: theme('colors.neutral.200') !important;
+}
+
+/* .react-flow__edge-textwrapper {
+  height: 10px !important;
+} */
+
+.react-flow__edge-textbg {
+  fill: theme('colors.neutral.700') !important;
+  height: 1.4rem !important;
+  width: 1.2rem !important;
+}
+
+.react-flow__edge-text {
+  fill: theme('colors.neutral.50') !important;
+  transform: translateX(0.15rem) translateY(-0.2rem) !important;
+}
+
+/* TODO: Maybe use this for ring properties on focus, not good for bright mode */
+/* 
+button:focus-visible {
+  outline: 2px solid theme('colors.neutral.50');
+}
+
+button:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+a:focus-visible {
+  outline: 2px solid theme('colors.neutral.50');
+}
+
+a:focus:not(:focus-visible) {
+  outline: none !important;
+} */
+
+/* react-toastify */
+
+.Toastify__toast-body {
+  @apply !my-0 !px-3 !font-medium !font-mono !text-base;
+}
+
+.Toastify__progress-bar {
+  @apply !bg-gradient-to-r !from-primary !to-primary;
+}
+
+.Toastify__progress-bar--success {
+  @apply !bg-green-500 !from-green-500;
+}
+
+.Toastify__progress-bar--error {
+  @apply !bg-red-500 !from-red-500;
+}
+
+.Toastify__progress-bar--warn {
+  @apply !bg-yellow-500 !from-yellow-500;
+}

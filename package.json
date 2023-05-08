@@ -5,6 +5,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "dev:block": "turbo run dev --filter=block...",
+    "dev:block-editor": "turbo run dev --filter=block-editor...",
     "dev:canvas": "turbo run dev --filter=canvas...",
     "dev:todo": "turbo run dev --filter=todo..."
   },
