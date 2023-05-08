@@ -32,14 +32,7 @@ import { createEditor, Editor, Node, Range, Transforms } from 'slate'
 import { withHistory } from 'slate-history'
 import { Editable, ReactEditor, RenderElementProps, Slate as SlateJS, withReact } from 'slate-react'
 
-import {
-  useDocumentStatus,
-  useMe,
-  usePatch,
-  usePatchMe,
-  useStore,
-  useSubscribe,
-} from '../../../realtime.config'
+import { useMe, usePatch, usePatchMe, useStore, useSubscribe } from '../../../realtime.config'
 import { BlockType, CustomElement, Format } from '@/typings'
 import {
   getListOperations,
@@ -368,7 +361,7 @@ export const BlockEditor = () => {
 
   return (
     <div className='prose' id={PROSE_CONTAINER_ID} onClick={(e) => e.stopPropagation()}>
-      <div className='w-full max-w-3xl mx-auto px-16 py-20'>
+      <div className='w-full max-w-3xl mx-auto px-16 py-5 sm:py-10'>
         <SlateJS editor={editor} value={[]} onChange={onChange}>
           <Toolbar />
 

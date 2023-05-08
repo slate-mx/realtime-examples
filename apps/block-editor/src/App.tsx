@@ -41,13 +41,11 @@ function App() {
       publicAuthKey={import.meta.env.VITE_REALTIME_PUBLIC_AUTH_KEY}
       throttle={50}
     >
-      <div className='flex h-screen'>
-        <div id='slate-wrapper' className='relative h-full overflow-y-scroll flex-1'>
-          <EditorBar />
+      <div id='slate-wrapper' className='relative h-full overflow-y-scroll flex-1'>
+        <EditorBar />
 
-          <div className='relative min-h-full w-full flex flex-col pt-16 pb-24 overflow-x-hidden'>
-            <BlockEditor />
-          </div>
+        <div className='relative min-h-full w-full flex flex-col pt-16 pb-24 overflow-x-hidden'>
+          <BlockEditor />
         </div>
       </div>
     </RealtimeProvider>
